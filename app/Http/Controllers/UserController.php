@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -54,12 +57,14 @@ class UserController extends Controller
         }
      }
 
-    public function logout()
+    public function logout(Request $request)
     {
-        auth()->logout();
-        request()->session()->invalidate();
-        request()->session()->regenerateToken();
+        Auth::logout();
+ 
+        $request->session()->invalidate();
     
-        return redirect('register');
+        $request->session()->regenerateToken();
+    
+        return redirect('/');        
     }
 }

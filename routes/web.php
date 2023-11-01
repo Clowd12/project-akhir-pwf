@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardLaundryController;
 
 
 /*
@@ -25,5 +26,8 @@ Route::post( '/register', [UserController::class, 'store'])->name('register');
 Route::get('/login',[UserController::class,'login'])->name('login');
 Route::post( '/login', [UserController::class, 'authenticate'])->name('auth');
 
-Route::get('/logout',[UserController::class,'logout'])->name('logout');
+Route::post('/logout',[UserController::class,'logout'])->name('logout');
 
+
+
+Route::resource('/dashboard/laundry', DashboardLaundryController::class);    

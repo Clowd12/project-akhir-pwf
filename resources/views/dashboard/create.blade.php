@@ -17,7 +17,7 @@
             <div class="col-sm-10">
                 <input type="text" class="form-control  @error('name') is-invalid @enderror" name="name"
                     id="name">
-                @error('title')
+                @error('name')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
@@ -26,15 +26,37 @@
         </div>
 
         <div class="row mb-3">
-            <label for="number" class="col-sm-2 col-form-label">Nomor WA</label>
+            <label for="phone" class="col-sm-2 col-form-label">Nomor WA</label>
             <div class="col-sm-10">
-                <input type="number" class="form-control  @error('number') is-invalid @enderror" name="number"
-                    id="number">
-                @error('number')
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1">+62</span>
+                    <input type="number" class="form-control  @error('phone') is-invalid @enderror" name="phone"
+                        id="phone" placeholder="8**********">
+                </div>
+
+                @error('phone')
                     <div class="invalid-feedback">
                         {{ $message }}
                     </div>
                 @enderror
+            </div>
+        </div>
+
+        <div class="row mb-3">
+            <label for="number" class="col-sm-2 col-form-label">Layanan</label>
+            <div class="col-sm-10 row">
+                @foreach ($services as $gr)
+                    <div class="col-4">
+                        <div class="form-check">
+                            <div class="checkbox">
+                                <label for="checkbox1" class="form-check-label ">
+                                    <input type="checkbox" class="form-check-input" name="service[]"
+                                        value="{{ $gr->id }}"> {{ $gr->name }}
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                @endforeach
             </div>
         </div>
 

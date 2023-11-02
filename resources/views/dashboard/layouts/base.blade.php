@@ -54,20 +54,20 @@
 
     <div class="modal fade" id="logoutmodal" tabindex="-1" aria-labelledby="logoutmodallabel" aria-hidden="true">
         <div class="modal-dialog">
-            <div class="modal-content rounded-0">
+            <div class="modal-content ">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5" id="logoutmodallabel">Logout</h1>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Yakin Logout <i class="fa-solid fa-question fa-fade text-primary"></i>
+                    Yakin Logout <i class="fa-solid fa-question fa-fade text-warning"></i>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="rounded-0 btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
+                    <button type="button" class=" btn btn-outline-warning" data-bs-dismiss="modal">Tidak</button>
 
                     <form action="{{ route('logout') }}" method="post" id="logout">
                         @csrf
-                        <button type="submit" class="rounded-0 btn btn-primary">
+                        <button type="submit" class=" btn btn-warning">
                             Logout</button>
                     </form>
 

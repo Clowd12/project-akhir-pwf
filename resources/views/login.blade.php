@@ -9,6 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    {{-- My Style --}}
+    <link rel="stylesheet" href="/css/style.css">
 
     <title>Login</title>
 
@@ -41,8 +43,8 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Sign in</button>
-                        <p>Belum mempunyai aku? <a href="/register">Register</a></p>
+                        <button type="submit" class="btn btn-primary btn-block mb-4">Login</button>
+                        <p>Belum mempunyai akun? <a href="/register">Register</a></p>
                     </div>
             </div>
             </form>

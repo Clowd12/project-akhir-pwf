@@ -9,6 +9,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+    {{-- My Style --}}
+    <link rel="stylesheet" href="/css/style.css">
+
     <title>Register</title>
 </head>
 
@@ -60,7 +63,7 @@
                     </div>
                     <div class="mb-3">
                         <input type="submit" class="btn btn-primary" value="Register">
-                        <p>Sudah mempunyai aku? <a href="/register">Register</a></p>
+                        <p>Sudah mempunyai akun? <a href="/login">Login</a></p>
                     </div>
                 </form>
             </div>

@@ -1,19 +1,24 @@
  body {
      background-color: #f8f9fa;
+
  }
 
  .container-sm {
      margin-top: 100px;
+     padding-left: 35%;
  }
 
  .card {
      border: none;
      border-radius: 10px;
+     max-width: 50%;
      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
  }
 
  .card-body {
      padding: 40px;
+     max-width: 100%;
+
  }
 
  .form-label {

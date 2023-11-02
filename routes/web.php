@@ -28,6 +28,4 @@ Route::post( '/login', [UserController::class, 'authenticate'])->name('auth');
 
 Route::post('/logout',[UserController::class,'logout'])->name('logout');
 
-
-
-Route::resource('/dashboard/laundry', DashboardLaundryController::class);    
+Route::resource('/dashboard/laundry', DashboardLaundryController::class);

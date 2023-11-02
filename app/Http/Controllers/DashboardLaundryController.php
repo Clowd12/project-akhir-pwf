@@ -30,7 +30,23 @@ class DashboardLaundryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',        
+            'speaker_id' => 'required',
+            'image'=> 'image|file|max:1024',
+            'location'=> 'required|max:255',
+            'price'=> 'required|numeric',
+            'body' => 'required'
+        ]);
+
+        if($request->file('image')){
+            $validatedData['image'] = $request->file('image')->store('course-images');
+        }                    
+        $validatedData['slug'] = $request->slug . "-" . time(); 
+        $validatedData['status'] = "aktif";
+        
+        Course::create($validatedData);
+        return redirect('/dashboard/super/courses')->with('success', 'post berhasil ditambah');
     }
 
     /**

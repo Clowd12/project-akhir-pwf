@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\DashboardLaundryController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -19,16 +20,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register',[RegisterController::class,'create']);
-Route::post( '/register', [RegisterController::class, 'store'])->name('register');
+Route::get('/register',[UserController::class,'register']);
+Route::post( '/register', [UserController::class, 'store'])->name('register');
 
-Route::get('/login',[LoginController::class,'login'])->name('login');
-Route::post( '/login', [LoginController::class, 'authenticate'])->name('auth');
+Route::get('/login',[UserController::class,'login'])->name('login');
+Route::post( '/login', [UserController::class, 'authenticate'])->name('auth');
 
-Route::get('/logout', function () {
-    auth()->logout();
-    request()->session()->invalidate();
-    request()->session()->regenerateToken();
+Route::post('/logout',[UserController::class,'logout'])->name('logout');
 
-    return redirect('register');
-})->name('logout');
+
+
+Route::resource('/dashboard/laundry', DashboardLaundryController::class);    

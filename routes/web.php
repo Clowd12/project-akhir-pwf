@@ -20,12 +20,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/register',[UserController::class,'register']);
+Route::get('/register',[UserController::class,'register'])->middleware('guest');
 Route::post( '/register', [UserController::class, 'store'])->name('register');
 
-Route::get('/login',[UserController::class,'login'])->name('login');
+Route::get('/login',[UserController::class,'login'])->name('login')->middleware('guest');
 Route::post( '/login', [UserController::class, 'authenticate'])->name('auth');
 
 Route::post('/logout',[UserController::class,'logout'])->name('logout');
 
-Route::resource('/dashboard/laundry', DashboardLaundryController::class);
+Route::resource('/dashboard/laundry', DashboardLaundryController::class)->middleware('auth');

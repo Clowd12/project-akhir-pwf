@@ -29,7 +29,7 @@ class UserController extends Controller
         if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
 
-            return redirect()->intended();
+            return redirect()->intended('/dashboard/laundry');
         };
 
         return back()->withErrors([
@@ -53,7 +53,7 @@ class UserController extends Controller
         if (Auth::attempt(['email' => $user->email, 'password' => $request->password])) {
             $request->session()->regenerate();
 
-            return redirect()->intended("login");
+            return redirect()->intended("/dashboard/laundry");
         }
      }
 

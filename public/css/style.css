@@ -1,3 +1,4 @@
+ /* login & register */
  body {
      background-color: #f8f9fa;
 
@@ -46,4 +47,42 @@
 
  a:hover {
      text-decoration: underline;
+ }
+
+ .container {
+     background-color: white;
+     text-align: center;
+ }
+
+ 
+ /* index */
+ .header-footer {
+     background-color: #A0E9FF;
+     color: black;
+     padding: 20px;
+     font-size:medium;
+
+ }
+
+ .header-footer h1 {
+     font-size: 2em;
+ }
+
+ .header-footer p {
+     font-size: 1.3em;
+ }
+
+ .features {
+     display: flex;
+     justify-content: space-around;
+     padding-top: 40px;
+     padding-bottom: 40px;
+ }
+
+ .features h3 {
+     font-size: 1.5em;
+ }
+
+ .features p {
+     font-size: 1em;
  }

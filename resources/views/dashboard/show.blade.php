@@ -10,11 +10,11 @@
             </a>
         </p>
 
-        <a class="btn btn-warning rounded-0" href="/dashboard/laundry/{{ Crypt::encrypt($laundry->id) }}/edit">Edit</a>
+        <a class="btn btn-warning " href="/dashboard/laundry/{{ Crypt::encrypt($laundry->id) }}/edit">Edit</a>
         <form action="/dashboard/laundry/{{ Crypt::encrypt($laundry->id) }}" id="delete" method="post" class="d-inline">
             @method('delete')
             @csrf
-            <button class="btn btn-danger rounded-0" onclick="delete_laundry()" type="button">
+            <button class="btn btn-danger " onclick="delete_laundry()" type="button">
                 Hapus<i class="bi bi-x-circle"></i>
             </button>
         </form>
@@ -26,7 +26,7 @@
                     <h3 class="mb-2">Deskripsi</h3>
                     {!! $laundry->description !!}
                     @if ($haveService->count())
-                        <h3 class="my-5">Service</h3>
+                        <h3 class="my-5"><i class="fa-solid fa-list"></i> Service</h3>
                         {{-- <h3>{{ $haveService }}</h3> --}}
                         <div class="row">
                             @foreach ($haveService as $gr)
@@ -41,10 +41,11 @@
             <div class="col-lg-4 mt-3 ">
                 <div class="card p-4 border-warning border-2">
                     <h1 class="fw-bold mb-5">{{ $laundry->name }}</h1>
-                    <div class="fs-5 fw-semibold">Infromasi</div>
+                    <div class="fs-5 fw-semibold">Infromasi <i class="fa-solid fa-circle-info"></i></div>
                     <hr>
-                    <div class="fw-medium">Alamat : <span class="text-secondary"> {{ $laundry->location }}</span></div>
-                    <div class="fw-medium">Harga : <span
+                    <div class="fw-medium"><i class="fa-solid fa-location-dot"></i> Alamat : <span class="text-secondary">
+                            {{ $laundry->location }}</span></div>
+                    <div class="fw-medium"><i class="fa-solid fa-money-bill-wave"></i> Harga : <span
                             class="text-secondary">Rp{{ number_format($laundry->priceKg, 0, '', '.') }} / Kg</span></div>
                     <a class="btn btn-warning fw-semibold mt-5 mb-2" target="_blank"
                         href="https://api.whatsapp.com/send?phone=62{{ $laundry->phone }}"><i
@@ -57,7 +58,6 @@
     </div>
 
     <script>
-        
         function delete_laundry() {
             Swal.fire({
                 title: 'Yakin Ingin Hapus?',

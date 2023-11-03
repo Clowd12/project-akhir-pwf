@@ -44,7 +44,7 @@ class DashboardLaundryController extends Controller
             'location'=> 'required|max:255',
             'phone'=> 'required|numeric',
             'description' => 'required',
-            'image'=> 'image|file|max:1024',
+            'image'=> 'image|file|required|max:1024',
             'open' => 'required',
             'close' => 'required',
         ]);
@@ -52,8 +52,8 @@ class DashboardLaundryController extends Controller
         if($request->file('image')){
             $validatedData['image'] = $request->file('image')->store('laundry-images');
         }                    
-        // $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['user_id'] = 1;
+        $validatedData['user_id'] = auth()->user()->id;
+        // $validatedData['user_id'] = 1;
 
         $id = DB::table('laundries')->insertGetId($validatedData);
 
@@ -113,7 +113,7 @@ class DashboardLaundryController extends Controller
             'location'=> 'required|max:255',
             'phone'=> 'required|numeric',
             'description' => 'required',
-            'image'=> 'image|file|max:1024',
+            'image'=> 'image|file|required|max:1024',
             'open' => 'required',
             'close' => 'required',
         ]);
@@ -124,8 +124,8 @@ class DashboardLaundryController extends Controller
             }
             $validatedData['image'] = $request->file('image')->store('laundry-images');
         }                    
-        // $validatedData['user_id'] = auth()->user()->id;
-        $validatedData['user_id'] = 1;
+        $validatedData['user_id'] = auth()->user()->id;
+        // $validatedData['user_id'] = 1;
 
         $id = Laundry::where('id',$laundry2->id)->first();
         $id->update($validatedData);

@@ -8,7 +8,7 @@
                 class="fa-solid fa-arrow-left me-2"></i> Kembali
         </a>
     </p>
-    <h1 class="mt-3 mb-5">Laundry Baru</h1>
+    <h1 class="mt-3 mb-5">Laundry Edit</h1>
 
     <form action="/dashboard/laundry/{{ Crypt::encrypt($laundry->id) }}" method="post" enctype="multipart/form-data">
         @method('put')

@@ -13,7 +13,14 @@ class Laundry extends Model
 {
     use HasFactory;
     protected $guarded = ['id'];
-    
+
+    public function scopeFilter($query, array $filters){
+        if(isset($filters['search']) ? $filters['search'] : false){//if else
+            return $query->where('location','like','%' . $filters['search'] . '%')
+            ->orWhere('name','like','%' . $filters['search'] . '%')
+            ->orWhere('description','like','%' . $filters['search'] . '%');
+        }
+    }
     public function user():BelongsTo
     {
         return $this->belongsTo(User::class,'user_id'); 

@@ -11,7 +11,9 @@
 
     {{-- My Style --}}
     <link rel="stylesheet" href="/css/style.css">
-
+    {{-- fontawesome --}}
+    <script src="https://kit.fontawesome.com/bd49e73b8b.js" crossorigin="anonymous"></script>
+    {{-- fontawesome --}}
     <title>Login</title>
 
 </head>
@@ -20,8 +22,15 @@
     <div class="container-sm">
         <div class="card">
             <div class="card-body">
+                <p class="mt-4 mb-3">
+
+                    <a href="/"
+                        class="link-dark link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover"><i
+                            class="fa-solid fa-arrow-left me-2"></i> Kembali
+                    </a>
+                </p>
                 <form action="{{ route('login') }}" method="post">
-                    @csrf                    
+                    @csrf
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address</label>
                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"

@@ -62,7 +62,7 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <input type="submit" class="btn btn-primary" value="Register">
+                        <input type="submit" class="btn btn-primary mb-4" value="Register">
                         <p>Sudah mempunyai akun? <a href="/login">Login</a></p>
                     </div>
                 </form>

@@ -23,38 +23,35 @@
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
     {{-- trix --}}
-
 </head>
 
 <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/dashboard/laundry">LAUNDRY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link {{ Request::is('laundry*') ? 'active' : '' }}" href="/laundry">Pencarian</a>
+                    </li>
+
+                </ul>
+                <a class="btn btn-dark " href="/login">
+                    Login
+                </a>
+            </div>
+        </div>
+    </nav>
 
     <main class="container">
         @yield('container')
     </main>
 
-    <div class="modal fade" id="logoutmodal" tabindex="-1" aria-labelledby="logoutmodallabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content rounded-0">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="logoutmodallabel">Logout</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    Yakin Logout <i class="fa-solid fa-question fa-fade text-primary"></i>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="rounded-0 btn btn-secondary" data-bs-dismiss="modal">Tidak</button>
-
-                    <form action="{{ route('logout') }}" method="post" id="logout">
-                        @csrf
-                        <button type="submit" class="rounded-0 btn btn-primary">
-                            Logout</button>
-                    </form>
-
-                </div>
-            </div>
-        </div>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">

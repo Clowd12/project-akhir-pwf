@@ -17,10 +17,6 @@ use App\Http\Controllers\DashboardLaundryController;
 |
 */
 // start LaundryController
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Route::get('/', [LaundryController::class,"index"]);
 
 Route::get('/laundry', [LaundryController::class,"laundries"]);

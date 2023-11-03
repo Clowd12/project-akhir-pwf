@@ -18,7 +18,7 @@ class DashboardLaundryController extends Controller
     public function index()
     {
         return view('dashboard.index',[
-            "laundries"=> Laundry::all(),
+            "laundries"=> Laundry::where('user_id',auth()->user()->id)->get(),
         ]);
     }
 

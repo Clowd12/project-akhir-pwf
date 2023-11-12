@@ -113,7 +113,7 @@ class DashboardLaundryController extends Controller
             'location'=> 'required|max:255',
             'phone'=> 'required|numeric',
             'description' => 'required',
-            'image'=> 'image|file|required|max:1024',
+            'image'=> 'image|file|max:1024',
             'open' => 'required',
             'close' => 'required',
         ]);
